@@ -15,6 +15,11 @@
         <p class="header-subtitle">{{ subtitle }}</p>
       </div>
       <div class="header-right">
+        <nav class="header-nav">
+          <router-link to="/" class="nav-link" active-class="nav-active">概览</router-link>
+          <router-link to="/detail" class="nav-link" active-class="nav-active">明细</router-link>
+          <router-link to="/analytics" class="nav-link" active-class="nav-active">分析</router-link>
+        </nav>
         <div class="status-indicator">
           <span class="status-dot"></span>
           <span class="status-text">在线</span>
@@ -117,6 +122,32 @@ defineProps({
   font-size: var(--font-size-sm);
   color: var(--text-body);
   letter-spacing: 0.5px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 8px;
+}
+
+.nav-link {
+  padding: 6px 14px;
+  font-size: var(--font-size-sm);
+  color: var(--text-body);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast);
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.nav-active {
+  color: var(--color-primary);
+  background: rgba(79, 172, 254, 0.1);
 }
 
 .header-right {
